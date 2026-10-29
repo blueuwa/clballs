@@ -67,6 +67,7 @@ select_screen = SelectScreen(ROSTER_INFO, ROSTER_CLASSES, get_avatar, editors)
 edit_screen = StatEditorScreen(ROSTER_INFO, ROSTER_CLASSES, editors, get_avatar)
 
 # CHANGED FULLSCREEN TO RESIZABLE FOR WEB COMPATIBILITY
+pygame.display.init()
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), pygame.RESIZABLE)
 pygame.display.set_caption("Bouncing Physics Arena")
 clock = pygame.time.Clock()
