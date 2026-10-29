@@ -6,8 +6,8 @@ import pygame
 from config import find_asset
 
 MASTER_VOLUME = 0.6      
-ENABLED = True           
-
+import sys
+ENABLED = (sys.platform != "emscripten")
 VOLUMES = {
     "star": 0.55, "hit": 0.8, "bump": 0.55, "boom": 0.9, "scratch": 0.8,
     "heal": 0.7, "super": 0.8, "dash": 0.7, "sword": 0.9, "win": 0.8, "click": 0.5,
