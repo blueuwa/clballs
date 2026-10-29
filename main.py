@@ -500,4 +500,6 @@ async def main():
         await asyncio.sleep(0)
 
 # Start the async loop
-asyncio.run(main())
+pygame.display.flip()
+if __name__ == "__main__":
+    asyncio.run(main())
