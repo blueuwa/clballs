@@ -1,11 +1,17 @@
+import sys
 import os
 import pygame
 
 pygame.init()
 
-# Fullscreen Display Setup
-info = pygame.display.Info()
-SCREEN_WIDTH, SCREEN_HEIGHT = info.current_w, info.current_h
+# --- Web vs Local Display Setup ---
+if sys.platform == "emscripten":
+    # Web browsers need a fixed resolution
+    SCREEN_WIDTH, SCREEN_HEIGHT = 1280, 720
+else:
+    # Local PC gets your full screen
+    info = pygame.display.Info()
+    SCREEN_WIDTH, SCREEN_HEIGHT = info.current_w, info.current_h
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 ASSETS_DIR = os.path.join(BASE_DIR, "assets")
